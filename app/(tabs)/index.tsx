@@ -1,9 +1,16 @@
-import { View, Text} from "react-native";
+import { StatusBar} from "react-native";
+
+import Header from '../Header'
 
 
 export default function HomeScreen() {
   return (
-    <View>
-      <Text>todo</Text>
-    </View>
+      <>
+      <StatusBar
+        barStyle='dark-content'
+        translucent
+        backgroundColor='#f0f0f0'
+      />     
+      <Header/>
+      </>
       )}
