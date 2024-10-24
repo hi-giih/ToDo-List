@@ -1,2 +1,3 @@
-# Welcome to your Expo app 👋
-
+# ToDo List
+Aguarde ...
+Projeto em desenvolvimento :)
