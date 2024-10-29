@@ -1,13 +1,14 @@
-import { View, Text, TouchableOpacity } from "react-native"
+import { View, Text, TouchableOpacity,Image } from "react-native"
 import { style } from './styles'
 
 export function Tarefa (){
     return(
-    
-          <TouchableOpacity style={style.container}>
-            <View style={style.check}>
-            <Text>oii</Text>
-            </View>
+      <View style={style.container}>
+          <TouchableOpacity style={style.check}/>
+          <Text style={style.texto}>Integer urna interdum massa libero auctor neque turpis turpis semper.</Text>
+          <TouchableOpacity >
+            <Image source={require('../../assets/img/Lixeira.png')} style={style.icon}/>
           </TouchableOpacity>
+      </View>
     )
 }

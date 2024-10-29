@@ -25,6 +25,8 @@ export default function Header(){
       </View>
       <View  style={style.linha}></View>
         <Tarefa/>
+        <Tarefa/>
+        <Tarefa/>
     </View>
     <View style={style.entrada}>
         <View style={style.containerInput}>
