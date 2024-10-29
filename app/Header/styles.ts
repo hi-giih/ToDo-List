@@ -2,11 +2,21 @@ import { StyleSheet } from "react-native";
 
 export const style = StyleSheet.create({
     container: {
-      height: 173,
+      height:'20%',
       backgroundColor: '#0D0D0D',
       justifyContent: 'center',
       alignItems: 'center'
+    },
+    container2: {
+      height:'80%',
+      backgroundColor: '#1A1A1A',
+    },
 
+    entrada:{
+      position: 'absolute',
+      width:'100%',
+      top:'15%',
+      alignItems: 'center',
     },
 
     containerInput:{
@@ -14,12 +24,10 @@ export const style = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       gap: 4,
-      marginTop: 40
     },
 
     input:{
      backgroundColor: '#262626',
-     height: 54,
      width: 271,
      borderRadius: 6,
      padding: 16,
@@ -29,7 +37,6 @@ export const style = StyleSheet.create({
     button:{
       backgroundColor: '#1E6F9F',
       width: 54,
-      height: 54,
       borderRadius: 6,
       alignItems: 'center',
       justifyContent: 'center',
@@ -38,5 +45,44 @@ export const style = StyleSheet.create({
     buttonText:{
       color:'#F2F2F2',
       fontSize: 16,
+    },
+
+    taks:{
+      marginTop: 20,
+      flexDirection: 'row',
+      justifyContent:  'space-between',
+      padding: 20
+    },
+
+    infos:{
+      flexDirection: 'row',
+      gap: 10,
+    },
+
+    nova:{
+      color:'#4EA8DE',
+      fontWeight: 'bold',
+      fontSize: 14
+    },
+
+    contador:{
+      borderRadius: 50,
+      backgroundColor: '#333333',
+      paddingHorizontal: 5,
+      color: '#FFF',
+      fontWeight: 'bold',
+    },
+
+    encerrada:{
+      color:'#8284FA',
+      fontWeight: 'bold',
+      fontSize: 14
+    },
+
+    linha:{
+      height: 1,
+      backgroundColor: '#333333',
+      marginLeft: 20,
+      marginRight: 20
     }
   })
