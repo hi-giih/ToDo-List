@@ -1,5 +1,6 @@
-import { View,Text, Image, TextInput, TouchableOpacity } from "react-native"
+import { View,Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native"
 import {style} from './styles'
+import { Tarefa } from "../Tarefas"
 
 export default function Header(){
   function handleTarefaAdd(){
@@ -23,6 +24,7 @@ export default function Header(){
         </View>
       </View>
       <View  style={style.linha}></View>
+        <Tarefa/>
     </View>
     <View style={style.entrada}>
         <View style={style.containerInput}>

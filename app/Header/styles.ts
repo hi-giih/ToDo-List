@@ -15,7 +15,7 @@ export const style = StyleSheet.create({
     entrada:{
       position: 'absolute',
       width:'100%',
-      top:'15%',
+      top:'18%',
       alignItems: 'center',
     },
 
@@ -31,7 +31,8 @@ export const style = StyleSheet.create({
      width: 271,
      borderRadius: 6,
      padding: 16,
-     fontSize: 16
+     fontSize: 16,
+     color: '#FFF'
     },
 
     button:{
