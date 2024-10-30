@@ -1,11 +1,17 @@
 import { View, Text, TouchableOpacity,Image } from "react-native"
 import { style } from './styles'
 
-export function Tarefa (){
+type Props ={
+  name: string;
+  onRemove: ()=>void
+}
+
+
+export function Tarefa ({name, onRemove}: Props){
     return(
       <View style={style.container}>
           <TouchableOpacity style={style.check}/>
-          <Text style={style.texto}>Integer urna interdum massa libero auctor neque turpis turpis semper.</Text>
+          <Text style={style.texto}>{name}</Text>
           <TouchableOpacity >
             <Image source={require('../../assets/img/Lixeira.png')} style={style.icon}/>
           </TouchableOpacity>

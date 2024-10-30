@@ -43,9 +43,19 @@ export const style = StyleSheet.create({
       justifyContent: 'center',
     },
 
+    textoIncluir:{
+      height: 28,
+      width: 28,
+      borderRadius:14,
+      borderWidth:2,
+      borderColor: '#F2F2F2',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
     buttonText:{
       color:'#F2F2F2',
-      fontSize: 16,
+      fontSize: 14,
     },
 
     taks:{

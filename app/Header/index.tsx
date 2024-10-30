@@ -7,8 +7,14 @@ export default function Header(){
     console.log('Você clicou em adicionar')
   }
 
+  function handleTarefaRemove(){
+    console.log('Você clicou em Remover')
+  }
+
+  const tarefas=['Estudar', 'Correr',  'Treinar']
+
   return(
-   <>
+    <>
     <View style={style.container}>
         <Image source={require('../../assets/img/Logo.png')}/>
     </View>
@@ -24,9 +30,7 @@ export default function Header(){
         </View>
       </View>
       <View  style={style.linha}></View>
-        <Tarefa/>
-        <Tarefa/>
-        <Tarefa/>
+        <Tarefa name="Estudar bonitinha" onRemove={handleTarefaRemove}/>
     </View>
     <View style={style.entrada}>
         <View style={style.containerInput}>
@@ -35,7 +39,9 @@ export default function Header(){
             placeholderTextColor={"#808080"}              
           />
           <TouchableOpacity style={style.button} onPress={handleTarefaAdd}>
-            <Text style={style.buttonText}>+</Text>
+            <TouchableOpacity style={style.textoIncluir}>
+               <Text style={style.buttonText}>+</Text>
+             </TouchableOpacity>
           </TouchableOpacity>
         </View>
     </View>
