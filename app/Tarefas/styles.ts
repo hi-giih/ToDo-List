@@ -31,6 +31,11 @@ texto:{
 icon:{
   width: 17,
   height: 17,
+},
+
+iconcheck:{
+  width: 30,
+  height: 30, 
 }
 
 })

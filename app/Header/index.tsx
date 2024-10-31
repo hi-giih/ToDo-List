@@ -5,8 +5,8 @@ import { useState } from "react"
 
 export default function Header(){
   const [tarefa, setTarefas] = useState<string[]>([]);
-  const [tarefaNome, setTarefaNome] = useState ('') 
-
+  const [tarefaNome, setTarefaNome] = useState ('');
+  
   function handleTarefaAdd(){
     setTarefas(prevState => [...prevState, tarefaNome]);
     setTarefaNome('');
@@ -24,7 +24,7 @@ export default function Header(){
       ]
     )
   }
-  
+
 
   const tarefas=tarefa
 
