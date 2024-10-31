@@ -1,17 +1,32 @@
-import { View,Text, Image, TextInput, TouchableOpacity, FlatList } from "react-native"
+import { View,Text, Image, TextInput, TouchableOpacity, FlatList, Alert } from "react-native"
 import {style} from './styles'
 import { Tarefa } from "../Tarefas"
+import { useState } from "react"
 
 export default function Header(){
+  const [tarefa, setTarefas] = useState<string[]>([]);
+  const [tarefaNome, setTarefaNome] = useState ('') 
+
   function handleTarefaAdd(){
-    console.log('Você clicou em adicionar')
+    setTarefas(prevState => [...prevState, tarefaNome]);
+    setTarefaNome('');
   }
 
-  function handleTarefaRemove(){
-    console.log('Você clicou em Remover')
+  function handleTarefaRemove(name:string){
+    Alert.alert("Remover Tarefa", "Tem certeza que deseja remover essa tarefa?",
+      [{
+          text: 'Sim',
+          onPress:() => setTarefas(prevState => prevState.filter(tarefa => tarefa !== name))
+        },{
+          text: 'Não',
+          style: 'cancel'
+        }
+      ]
+    )
   }
+  
 
-  const tarefas=['Estudar', 'Correr',  'Treinar']
+  const tarefas=tarefa
 
   return(
     <>
@@ -30,16 +45,36 @@ export default function Header(){
         </View>
       </View>
       <View  style={style.linha}></View>
-        <Tarefa name="Estudar bonitinha" onRemove={handleTarefaRemove}/>
+      <FlatList
+        data={tarefas}
+        keyExtractor={(item)=>item}
+        renderItem={({item})=> (
+        <Tarefa 
+        key={item}
+        name={item}
+        onRemove={()=> handleTarefaRemove(item)}/>
+      )}
+      showsVerticalScrollIndicator={false}
+      ListEmptyComponent={()=> ( <View style={style.containerListaVazia}>
+        <Image source={require('../../assets/img/Clipboard.png')}/>
+        <View>
+          <Text style={style.tituloLista}>Você ainda não tem tarefas cadastradas </Text>
+          <Text style={style.fraseLista}>Crie tarefas e organize seus itens a fazer</Text>
+        </View>
+        </View>
+      )}
+      />
     </View>
     <View style={style.entrada}>
         <View style={style.containerInput}>
           <TextInput style={style.input}
             placeholder="Adicione uma nova tarefa"
-            placeholderTextColor={"#808080"}              
+            placeholderTextColor={"#808080"}
+            value={tarefaNome}
+            onChangeText={setTarefaNome}              
           />
           <TouchableOpacity style={style.button} onPress={handleTarefaAdd}>
-            <TouchableOpacity style={style.textoIncluir}>
+            <TouchableOpacity style={style.textoIncluir}  onPress={handleTarefaAdd}>
                <Text style={style.buttonText}>+</Text>
              </TouchableOpacity>
           </TouchableOpacity>

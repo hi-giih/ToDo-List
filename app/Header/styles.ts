@@ -95,5 +95,25 @@ export const style = StyleSheet.create({
       backgroundColor: '#333333',
       marginLeft: 20,
       marginRight: 20
+    },
+
+    containerListaVazia:{
+      marginVertical: 35,
+      marginHorizontal: 35,
+      justifyContent:'center',
+      alignItems:'center'
+    },
+
+    tituloLista:{
+      color:'#808080',
+      fontWeight: 'bold',
+      fontSize: 14,
+      marginTop:10
+    },
+
+    fraseLista:{
+      color:'#808080',
+      fontSize: 14
     }
+
   })

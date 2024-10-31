@@ -3,7 +3,7 @@ import { style } from './styles'
 
 type Props ={
   name: string;
-  onRemove: ()=>void
+  onRemove: (name: string)=>void;
 }
 
 
@@ -12,8 +12,9 @@ export function Tarefa ({name, onRemove}: Props){
       <View style={style.container}>
           <TouchableOpacity style={style.check}/>
           <Text style={style.texto}>{name}</Text>
-          <TouchableOpacity >
-            <Image source={require('../../assets/img/Lixeira.png')} style={style.icon}/>
+          <TouchableOpacity  onPress={()=> onRemove(name)}>
+            <Image source={require('../../assets/img/Lixeira.png')} 
+            style={style.icon}/>
           </TouchableOpacity>
       </View>
     )
