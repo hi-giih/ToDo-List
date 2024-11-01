@@ -5,14 +5,19 @@ import { useState } from "react";
 type Props ={
   name: string;
   onRemove: (name: string)=>void;
+  onToggleComplete: (isComplete: boolean) => void;
 }
 
 
-export function Tarefa ({name, onRemove}: Props){
+export function Tarefa ({name, onRemove, onToggleComplete}: Props){
   const [check, setCheck] = useState (false);
 
   function handleCheck(){
-    setCheck(!check);
+    setCheck(prevCheck => {
+      const novoCheck = !prevCheck;
+      onToggleComplete(novoCheck);
+      return novoCheck
+    });
   }
 
 
@@ -26,7 +31,10 @@ export function Tarefa ({name, onRemove}: Props){
               )
             }
           </TouchableOpacity>
-          <Text style={style.texto}>{name}</Text>
+          <Text style={[style.texto, 
+                check && {textDecorationLine: 'line-through', color:'#808080'}]
+                }>{name}
+          </Text>
           <TouchableOpacity  onPress={()=> onRemove(name)}>
             <Image source={require('../../assets/img/Lixeira.png')} 
             style={style.icon}/>

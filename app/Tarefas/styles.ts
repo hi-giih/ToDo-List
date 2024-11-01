@@ -18,7 +18,9 @@ check: {
   height: 24, 
   borderRadius: 12,
   borderWidth: 2,
-  borderColor: '#4EA8DE'
+  borderColor: '#4EA8DE',
+  justifyContent: 'center',
+  alignContent: 'center'
 },
 
 texto:{
@@ -29,13 +31,14 @@ texto:{
 },
 
 icon:{
-  width: 17,
-  height: 17,
+  width: 15,
+  height: 15,
 },
 
 iconcheck:{
-  width: 30,
-  height: 30, 
+  width: 35,
+  height: 35,
+  alignSelf: 'center',
 }
 
 })

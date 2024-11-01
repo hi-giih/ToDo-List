@@ -6,17 +6,25 @@ import { useState } from "react"
 export default function Header(){
   const [tarefa, setTarefas] = useState<string[]>([]);
   const [tarefaNome, setTarefaNome] = useState ('');
+  const [tarefasCriadas, setTarefasCriadas] = useState(0);
+  const [tarefasConcluidas, setTarefasConcluidas] = useState(0);
   
   function handleTarefaAdd(){
+    if(tarefaNome.trim()){
     setTarefas(prevState => [...prevState, tarefaNome]);
     setTarefaNome('');
+    setTarefasCriadas(prev => prev + 1);
+    }
   }
 
   function handleTarefaRemove(name:string){
     Alert.alert("Remover Tarefa", "Tem certeza que deseja remover essa tarefa?",
       [{
           text: 'Sim',
-          onPress:() => setTarefas(prevState => prevState.filter(tarefa => tarefa !== name))
+          onPress:() => {setTarefas(prevState => prevState.filter(tarefa => tarefa !== name))
+            setTarefasCriadas(prev => prev - 1);
+          }
+          
         },{
           text: 'Não',
           style: 'cancel'
@@ -26,7 +34,9 @@ export default function Header(){
   }
 
 
-  const tarefas=tarefa
+  function handleToggleComplete(isComplete: boolean){
+    setTarefasConcluidas(prev => prev + (isComplete ? 1 : -1));
+  }
 
   return(
     <>
@@ -37,22 +47,23 @@ export default function Header(){
       <View style={style.taks}>
         <View style={style.infos}>
           <Text style={style.nova}>Criadas</Text>
-          <Text style={style.contador}> 0 </Text>
+          <Text style={style.contador}>{tarefasCriadas} </Text>
         </View>
         <View style={style.infos}>
           <Text style={style.encerrada}>Concluídas</Text>
-          <Text style={style.contador}> 0 </Text>
+          <Text style={style.contador}>{tarefasConcluidas}</Text>
         </View>
       </View>
       <View  style={style.linha}></View>
       <FlatList
-        data={tarefas}
+        data={tarefa}
         keyExtractor={(item)=>item}
         renderItem={({item})=> (
         <Tarefa 
         key={item}
         name={item}
-        onRemove={()=> handleTarefaRemove(item)}/>
+        onRemove={()=> handleTarefaRemove(item)}
+        onToggleComplete={handleToggleComplete}/>
       )}
       showsVerticalScrollIndicator={false}
       ListEmptyComponent={()=> ( <View style={style.containerListaVazia}>

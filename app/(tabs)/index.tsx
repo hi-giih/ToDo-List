@@ -6,9 +6,9 @@ import Header from '../Header'
 export default function HomeScreen() {
   return (
       <>
-      <StatusBar barStyle={'light-content'}
+      <StatusBar backgroundColor={'#0D0D0D'}
       translucent
-       backgroundColor={'#0D0D0D'}/>
+      barStyle={'light-content'}/>
       <Header/>
       </>
       )}

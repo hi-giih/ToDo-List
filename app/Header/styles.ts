@@ -82,6 +82,7 @@ export const style = StyleSheet.create({
       paddingHorizontal: 5,
       color: '#FFF',
       fontWeight: 'bold',
+      textAlign: 'center',
     },
 
     encerrada:{
