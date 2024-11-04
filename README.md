@@ -35,7 +35,7 @@ Esse projeto é um dos desafios da trilha de React Native do Ignite.
 
 6. Pronto! O sistema estará rodando, você pode utilizar o Expo Go no seu celular para rodar a aplicação localmente caso não tenha um simulador
 
-## 📫 Futuras Melhorias
+## 📌 Futuras Melhorias
 
 - **Excluir tarefas concluidas**: Adicionar a opção de remover tarefas já concluídas da lista. Atualmente, o contador de tarefas concluídas não é atualizado após a exclusão dessas tarefas, e esse comportamento será ajustado para refletir corretamente o número de tarefas finalizadas.
 
