@@ -37,8 +37,6 @@ Esse projeto é um dos desafios da trilha de React Native do Ignite.
 
 ## 📌 Futuras Melhorias
 
-- **Excluir tarefas concluidas**: Adicionar a opção de remover tarefas já concluídas da lista. Atualmente, o contador de tarefas concluídas não é atualizado após a exclusão dessas tarefas, e esse comportamento será ajustado para refletir corretamente o número de tarefas finalizadas.
-
 - **Adicionar datas as tarefas**  Implementar um campo de data para cada tarefa, permitindo que os usuários visualizem e organizem as tarefas conforme suas datas de criação ou prazos.
 
 
