@@ -73,7 +73,7 @@ export const style = StyleSheet.create({
     nova:{
       color:'#4EA8DE',
       fontWeight: 'bold',
-      fontSize: 14
+      fontSize: 14,
     },
 
     contador:{
